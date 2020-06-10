@@ -11,7 +11,7 @@ const styles = {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: '12%',
-        backgroundColor: '#FCEEFF',
+        backgroundColor: '#FFF7FF',
     },
     title: {
         fontSize: '2em',
@@ -32,32 +32,27 @@ const styles = {
     }
 };
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    render() {
-        //const classes = useStyles();
-        return (
-            <Card style={styles.root}>
-                <CardContent>
-                    <Typography style={styles.title}>
-                        <strong>Welcome to Tic-Tac Paddy Whack!</strong>
-                    </Typography>
-                    <Typography style={styles.secondary}>
-                        A variation of tic-tac-toe in which you "paddy whack" an opponent by deleting one of their moves each turn after four moves
-                    </Typography>
-                    <div style={styles.buttons}>
-                        <CardActions>
-                            <Button style={styles.button} variant="contained" color="primary" href="create_game">Start a Game</Button>
-                            <Button style={styles.button} variant="contained" color="secondary" href="choose_game">Find a Game</Button>
-                        </CardActions>
-                    </div>
-                </CardContent>
-            </Card>
-        );
-    }
+function Home(props) {
+
+    //const classes = useStyles();
+    return (
+        <Card style={styles.root}>
+            <CardContent>
+                <Typography style={styles.title}>
+                    <strong>Welcome to Tic-Tac Paddy Whack!</strong>
+                </Typography>
+                <Typography style={styles.secondary}>
+                    A variation of tic-tac-toe in which you "paddy whack" an opponent by deleting one of their moves each turn after four moves
+                </Typography>
+                <div style={styles.buttons}>
+                    <CardActions>
+                        <Button style={styles.button} variant="contained" color="primary" onClick={() => props.firebase.createGame()}>Start a Game</Button>
+                        <Button style={styles.button} variant="contained" color="secondary" href="choose_game">Find a Game</Button>
+                    </CardActions>
+                </div>
+            </CardContent>
+        </Card>
+    );
 }
 
 export default Home;
