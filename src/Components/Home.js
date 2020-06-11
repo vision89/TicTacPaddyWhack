@@ -46,7 +46,7 @@ function Home(props) {
                 </Typography>
                 <div style={styles.buttons}>
                     <CardActions>
-                        <Button style={styles.button} variant="contained" color="primary" onClick={() => props.firebase.createGame()}>Start a Game</Button>
+                        <Button style={styles.button} variant="contained" color="primary" href="game" onClick={() => props.firebase.createGame()}>Start a Game</Button>
                         <Button style={styles.button} variant="contained" color="secondary" href="choose_game">Find a Game</Button>
                     </CardActions>
                 </div>
